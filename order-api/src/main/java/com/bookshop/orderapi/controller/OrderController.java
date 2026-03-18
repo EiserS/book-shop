@@ -19,10 +19,10 @@ public class OrderController {
 
     @GetMapping("/test/{bookName}")
     public String testOrder(@PathVariable String bookName) {
-        String message = "Klient wlasnie kupil ksiazke: " + bookName;
+        String message = "Customer just bought a book: " + bookName;
 
         rabbitTemplate.convertAndSend(RabbitMQConfig.QUEUE_NAME, message);
 
-        return "Sukces! Wiadomosc wyslana do RabbitMQ: " + message;
+        return "Success! Message sent to RabbitMQ: " + message;
     }
 }

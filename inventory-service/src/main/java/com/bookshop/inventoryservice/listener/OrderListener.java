@@ -9,9 +9,9 @@ public class OrderListener {
     @RabbitListener(queues = "order.created.queue")
     public void receiveOrder(String message) {
         System.out.println("\n==========================================");
-        System.out.println("📦 [INVENTORY-SERVICE] Otrzymano nowe zamówienie!");
-        System.out.println("Treść: " + message);
-        System.out.println("Magazynier poszedł szukać książki na półce...");
+        System.out.println("📦 [INVENTORY-SERVICE] New order received!");
+        System.out.println("Message content: " + message);
+        System.out.println("Warehouse worker is looking for the book on the shelf...");
         System.out.println("==========================================\n");
     }
 }
